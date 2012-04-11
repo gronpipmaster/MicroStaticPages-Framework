@@ -11,9 +11,11 @@ class Routing {
 	public $page, $prefix;
 
 	public function __construct( $server ){
-	
+
+		$pathToPages = realpath( dirname(__FILE__) )  . DIRECTORY_SEPARATOR  . 'pages' . DIRECTORY_SEPARATOR;
+		
 		if( $server['REQUEST_URI'] == '/' ) {
-			$page = realpath( dirname(__FILE__) )  . DIRECTORY_SEPARATOR  . 'pages' . DIRECTORY_SEPARATOR  . 'home.html';
+			$page = $pathToPages  . 'home.html';
 			
 			$prefix = 'main-page';
 			
@@ -34,7 +36,7 @@ class Routing {
 
 			if( !is_file( $page ) ) {
 				header('Status: 404 Not Found');
-				$page = realpath( dirname(__FILE__) )  . DIRECTORY_SEPARATOR  . 'pages' . DIRECTORY_SEPARATOR  . '404.html';
+				$page = $pathToPages  . '404.html';
 			}
 
 			$prefix = 'other';

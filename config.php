@@ -10,7 +10,6 @@
 		'title'=>'Some Site Name',
 		'basePath'=>realpath(dirname(__FILE__)).DS,
 		'sitePath'=>'/',
-		'pagesPath'=>realpath(dirname(__FILE__)).DS . 'pages' . DS,
 	);
 	
 ?>
