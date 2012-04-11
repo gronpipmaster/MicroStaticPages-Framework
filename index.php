@@ -1,6 +1,7 @@
 <?php
 	$config=require(dirname(__FILE__).'/config.php');
-	$router=require(dirname(__FILE__).'/router.php');
+	require(dirname(__FILE__).'/router.php');
+	$router = new Routing( $_SERVER );
 ?>
 <!DOCTYPE html >
 <html xml:lang="ru-RU" lang="ru-RU" >
