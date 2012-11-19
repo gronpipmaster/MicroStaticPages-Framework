@@ -1,15 +1,13 @@
 <?php
-/**
+/*
 	This small config
-	@return title, basePath, sitePath and pagesPath for your html pages
+	@return title
 */
 
-	define( 'DS', DIRECTORY_SEPARATOR );
+define( 'DS', DIRECTORY_SEPARATOR );
+define( 'BASEPATH', realpath(dirname(__FILE__)).DS );
 
-	return array(
-		'title'=>'Some Site Name',
-		'basePath'=>realpath(dirname(__FILE__)).DS,
-		'sitePath'=>'/',
-	);
-	
-?>
+$config = new stdClass;
+$config->title = 'Some Site Name';
+
+return $config;
